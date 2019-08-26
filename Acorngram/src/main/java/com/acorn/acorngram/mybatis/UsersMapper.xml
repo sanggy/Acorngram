@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="users">
+	
+	<insert id="insert" parameterType="userDto">
+		
+		INSERT INTO users
+		(id, pwd, email, regdate)
+		VALUES (#{id}, #{pwd}, #{email}, SYSDATE)
+		
+	</insert>
+	
+	<select id="getPwdHash" parameterType="String" resultType="String">
+	
+		SELECT pwd
+		FROM users
+		WHERE id = #{id}
+		
+	</select>
+	
+	<select id="getData" parameterType="String" resultType = "userDto">
+		SELECT id,pwd,email,profile,regdate
+		FROM users
+		WHERE id = #{id}
+	
+	</select>
+	
+	<select id="isExist" parameterType="String" resultType="String">
+		SELECT id
+		FROM users
+		WHERE id = #{inputId}
+	</select>
+	
+	<select id="delete" parameterType="String">
+		DELETE FROM users
+		WHERE id=#{id}
+	</select>
+	
+	<update id="updateUser" parameterType="userDto">
+		UPDATE users
+		SET pwd = #{pwd}, email = #{email}
+		WHERE id = #{id}
+	</update>
+	
+	<update id="updateUser_email" parameterType="userDto">
+		UPDATE users
+		SET email = #{email}
+		WHERE id = #{id}
+	</update>
+	
+	<update id="updateUser_pwd" parameterType="userDto">
+		UPDATE users
+		SET pwd = #{pwd}
+		WHERE id = #{id}
+	</update>
+	
+	<update id="updateProfile" parameterType="userDto">
+		UPDATE users
+		SET profile = #{profile}
+		WHERE id = #{id}
+	</update>
+	
+</mapper>

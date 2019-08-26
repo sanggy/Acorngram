@@ -1,0 +1,54 @@
+header{
+	position: sticky;
+	z-index: 999;
+	top: 0;
+	height:80px;
+	background: linear-gradient(to bottom, white, rgba(255,255,255,.7), transparent);
+	color: $main-color;
+	.container{
+		height: 100%;
+		@include flex(space-between, nowrap);
+	}
+	.logo a{
+		color: $main-color;
+	}
+	a[role="button"]{
+		display: block;
+		background:  $main-color;
+		color: #fff;
+		border-radius: 16px;
+		text-align: center;
+		@include btn( $main-color);
+	}
+
+	.nav-container{
+		width: 200px;
+		@include flex(space-between);
+	}
+	nav{
+		position: relative;
+		height: 40px;
+		line-height: 40px;
+	}
+	ul{
+		//@include flex(center, nowrap, column);
+		display: none;
+		position: absolute;
+		top: 60px;
+		&.is-active{
+			display: block;
+		}
+		li{
+			width: 200px;
+			height: 64px;
+			line-height: 64px;
+			background: #fff;
+			box-shadow: 0 2px 4px rgba(black, .3);
+			box-sizing: border-box;
+			border-bottom: 1px solid #f0f0f0;
+			&:last-child{border:0;}
+			text-align: center;
+			a{color:$main-color;}
+		}
+	}
+}

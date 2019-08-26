@@ -1,0 +1,84 @@
+.write-post{
+	box-sizing: border-box;
+	width: 100%;
+	padding: 20px;
+	@include material-box;
+	transition: all .2s ease;
+	transform: translateY(-500px);
+
+	&.is-visible{
+		transform: translateY(0);
+		& + .timeline{
+			margin-top: 0px;
+		}
+	}
+
+	fieldset{
+		padding: 24px;
+		border: 0;	
+		@include border-radius;
+		.flexbox{
+			@include flex(space-between, nowrap);
+		}
+	}
+	legend{
+		text-align: center;
+		width: 100%;
+		@include flex(space-between, nowrap);
+		span{
+			font-size: 2rem;
+			font-weight: bold;
+		}
+		button{
+			height: 100%;
+			color:$main-color;
+			background: none;
+			border-radius: 8px;
+			@include btn-line($border-size: 2px);
+			font-size: 1rem;
+			font-weight: bold;
+		}
+	}
+
+	input[type="file"]{
+		width: 0;
+		height: 0;
+		visibility: hidden;
+	}
+	label[for="write-post-img"]{
+		position: relative;
+		width: 200px;
+		height: 200px;
+		@include border-radius;
+		background: #eee;
+		overflow: hidden;
+		text-align: center;
+	}
+
+	img#preview{
+		width: 180px;
+		transform: translateY(50%);
+	}
+
+	.write-post__area{
+		position: absolute;
+		top: calc(50% - 50px/2);
+		left: calc(50% - 150px/2);
+		text-align: center;
+		color: #333;
+		p{
+			font-size: 0.9rem;
+		}
+	}
+
+	textarea{
+		width: 450px;
+		height: 200px;
+		padding: 20px;
+		resize: none;
+		box-sizing: border-box;
+		border: 2px solid rgba($main-color,.5);
+		border-radius: 8px;
+		font-size: 1.2rem;
+	}
+}

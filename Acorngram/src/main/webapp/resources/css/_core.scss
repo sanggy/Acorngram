@@ -1,0 +1,88 @@
+//@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,700&display=swap');
+@font-face { font-family: 'NanumSquareRound'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'Material Icons'; font-style: normal; font-weight: 400; src: url(https://fonts.gstatic.com/s/materialicons/v48/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2'); }
+
+$max-width: 800px;
+$main-color: #26C0DC;
+
+*{margin: 0; padding: 0;font-family: 'NanumSquareRound', 'Noto Sans KR', sans-serif;}
+a{text-decoration: none;}
+ul{list-style:none;}
+address{font-style: normal;}
+input, button, label, textarea{ outline: none; &:focus{outline: none;} }
+
+.container{width: $max-width; margin: auto;}
+
+@mixin border-radius{ border-radius: 8px; } 
+
+@mixin flex($is-space, $is-wrap: nowrap, $align: null){
+	display: flex;
+	flex-direction: $align;
+	flex-wrap: $is-wrap;
+	justify-content: $is-space;
+	align-items: center;
+}
+
+@mixin btn($bg: #fff){
+	background: $bg;
+	padding: 6px 12px;
+	transition: background .2s ease;
+	&:hover{
+		background: darken($bg, 0.2);
+	}
+	&:active{
+		background: darken($bg, 0.5);
+	}
+}
+
+@mixin btn-line($color: $main-color, $border-size: 1px){
+	box-sizing: border-box;
+	border: $border-size solid $color;
+	padding: 6px 12px;
+	transition: border,background .2s ease;
+	&:hover{
+		color: #fff;
+		background: $color;
+	}
+	&:active{
+		color: #fff;
+		background: darken($color, 0.2);
+	}
+}
+
+@mixin material-box ($bg: #fff) {
+	@include border-radius;
+	background: $bg;
+	box-shadow: 0 2px 4px rgba(black, .3);
+}
+
+@keyframes fadein {
+	0%{opacity: 0;}
+	100%{opacity: 1;}
+}
+
+.material-icons {
+	font-family: 'Material Icons';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 24px;  /* Preferred icon size */
+	display: inline-block;
+	line-height: 1;
+	text-transform: none;
+	letter-spacing: normal;
+	word-wrap: normal;
+	white-space: nowrap;
+	direction: ltr;
+	vertical-align: middle;
+  
+	/* Support for all WebKit browsers. */
+	-webkit-font-smoothing: antialiased;
+	/* Support for Safari and Chrome. */
+	text-rendering: optimizeLegibility;
+  
+	/* Support for Firefox. */
+	-moz-osx-font-smoothing: grayscale;
+  
+	/* Support for IE. */
+	font-feature-settings: 'liga';
+  }

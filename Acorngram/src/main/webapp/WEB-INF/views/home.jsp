@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>MySite</title>
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/src/css/main.css" />
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/main.css" />
 	
 </head>
 <body>
@@ -105,8 +105,8 @@
 	<script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js"></script>
 	<!-- jquery used anyway -->
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-	<script src="${pageContext.request.contextPath}/src/js/macy.js"></script>
-	<script src="${pageContext.request.contextPath}/src/js/core.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/macy.js"></script>
+	<script src="${pageContext.request.contextPath}/resources/js/core.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/ko.js"></script>
 	<script>
